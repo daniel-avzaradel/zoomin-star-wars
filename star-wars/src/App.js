@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import Sidebar from './components/Sidebar';
 import Film from './components/Film';
-import Home from './components/Home'
+import Home from './components/Home';
+import Favorites from './components/Favorites';
 
 import {
   BrowserRouter as Router,
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/films/:id">
             <Film film={films} />
+          </Route>
+          <Route path="/favorites">
+            <Favorites />
           </Route>
         </Switch>
 

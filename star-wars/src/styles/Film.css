@@ -8,3 +8,17 @@
     padding: 10px;
     text-align: center;
 }
+
+.favorite {
+    padding: 14px 28px;
+    border: none;
+    outline: none;
+    background-color: goldenrod;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.1s ease;
+}
+
+.favorite:hover {
+    background-color: gold;
+}

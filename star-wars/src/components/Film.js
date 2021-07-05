@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import '../styles/Film.css'
 
 function Film(film) {
 
     const {id} = useParams();
-    
-    console.log(film.film[id]);
+
     let episode = ''
+
+    const [movies, setMovies] = useState([])
 
     switch(film.film[id].episode_id) {
         case 1: 
@@ -33,6 +34,20 @@ function Film(film) {
             break;
     }
 
+    function favorite() {
+        if(movies.includes(film.film[id].title)) {
+            console.log(movies);
+        } else {
+            setMovies([...movies, film.film[id].title])
+        }
+        // localStorage.setItem('film', film.film[id].title)
+    }
+
+    useEffect(() => {
+        console.log(movies);
+        console.log(localStorage);
+    }, [movies])
+
     return (
         <>
         <div className="film">
@@ -42,6 +57,8 @@ function Film(film) {
             <br />
             <p>Directed by: {film.film[id].director}</p>
             <p>Produced by: {film.film[id].producer}</p>
+            <br />
+            <button className="favorite" onClick={() => favorite()} >Favorite <i className="far fa-star"></i></button>
         </div>
         
         </>
