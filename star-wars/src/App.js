@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import Sidebar from './components/Sidebar';
-import Film from './components/Film'
+import Film from './components/Film';
+import Home from './components/Home'
 
 import {
   BrowserRouter as Router,
@@ -44,10 +45,6 @@ function App() {
     </Router>
       
   );
-}
-
-function Home() {
-  return <h2 style={{padding: '20px'}}>Home</h2>;
 }
 
 export default App;
