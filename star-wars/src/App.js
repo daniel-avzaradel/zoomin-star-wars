@@ -1,5 +1,6 @@
-import './styles/App.css'
 import {useState, useEffect} from 'react';
+import Sidebar from './components/Sidebar';
+import './styles/App.css'
 
 function App() {
 
@@ -15,10 +16,9 @@ function App() {
     fetchData();
   }, [])
 
-  console.log(films);
-
   return (
-    <div>
+    <div className="App">
+      <Sidebar films={films}/>
       <h1>STAR WARS</h1>
     </div>
   );
