@@ -3,15 +3,18 @@ import '../styles/Sidebar.css'
 import {Link} from 'react-router-dom'
 
 const Sidebar = ({films}) => {
-    console.log(films);
     return(
         <div className="Sidebar">
             <h1>STAR WARS FILMS</h1>
             <br />
             <ul>
+                <Link to='/'>
+                    <li>Home</li>
+                </Link>
                 {films.map((item, i) => {
+                    console.log(i, item);
                     return(
-                        <Link to={'/'+item.episode_id} key={i}>
+                        <Link to={'/films/'+i} key={i}>
                         <li>
                             {item.title}
                         </li>

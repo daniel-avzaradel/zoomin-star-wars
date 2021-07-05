@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import Sidebar from './components/Sidebar';
+import Film from './components/Film'
 
 import {
   BrowserRouter as Router,
@@ -23,6 +24,7 @@ function App() {
   }, [])
 
   return (
+
     <Router>
       <div className="App">
         <Sidebar films={films}/>
@@ -31,6 +33,9 @@ function App() {
           
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/films/:id">
+            <Film film={films} />
           </Route>
         </Switch>
 
@@ -42,7 +47,7 @@ function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2 style={{padding: '20px'}}>Home</h2>;
 }
 
 export default App;
