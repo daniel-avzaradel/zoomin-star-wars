@@ -1,5 +1,11 @@
 import {useState, useEffect} from 'react';
 import Sidebar from './components/Sidebar';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route } from "react-router-dom";
+
 import './styles/App.css'
 
 function App() {
@@ -17,11 +23,26 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Sidebar films={films}/>
-      <h1>STAR WARS</h1>
-    </div>
+    <Router>
+      <div className="App">
+        <Sidebar films={films}/>
+
+        <Switch>
+          
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+
+      </div>
+
+    </Router>
+      
   );
+}
+
+function Home() {
+  return <h2>Home</h2>;
 }
 
 export default App;
