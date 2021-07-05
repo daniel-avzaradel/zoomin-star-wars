@@ -11,7 +11,7 @@ function Home() {
             <img src={wall01} alt="" />
             <br />
             <footer>
-                <p>// This web app was developed by Daniel Avzaradel as part of the Front End Developer Internship position. //</p>
+                <p>/ This web app was developed by Daniel Avzaradel as part of the Front End Developer Internship position. /</p>
             </footer>
         </div>
     )
