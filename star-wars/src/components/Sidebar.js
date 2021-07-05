@@ -11,16 +11,20 @@ const Sidebar = ({films}) => {
                 <Link to='/'>
                     <li>Home</li>
                 </Link>
+                <br />
                 {films.map((item, i) => {
-                    console.log(i, item);
                     return(
-                        <Link to={'/films/'+i} key={i}>
-                        <li>
+                        <Link to={'/films/'+ i} key={i}>
+                        <li className="film-li">
                             {item.title}
                         </li>
                         </Link>
                     )
                 })}
+                <br />
+                <Link to='/favorites'>
+                    <li>Favorites</li>
+                </Link>
             </ul>
         </div>
     )
