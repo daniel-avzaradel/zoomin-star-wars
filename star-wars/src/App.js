@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css'
+import {useState, useEffect} from 'react';
 
 function App() {
+
+  const [films, setFilms] = useState([])
+  const url = 'https://swapi.dev/api/films'
+
+  useEffect(() => {
+    async function fetchData() {
+        let response = await fetch(url);
+        let res = await response.json();
+        setFilms(res.results)
+    }
+    fetchData();
+  }, [])
+
+  console.log(films);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>STAR WARS</h1>
     </div>
   );
 }
