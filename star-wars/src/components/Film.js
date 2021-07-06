@@ -49,14 +49,6 @@ function Film(film) {
         // localStorage.setItem('film', film.film[id].title)
     }
 
-    function previous() {
-        if(id === 1) {
-            window.location.pathname = 'films/5'
-        } else {
-            window.location.pathname = `films/${(id)}`
-        }
-    }
-
     return (
         <>
         <div className="film">

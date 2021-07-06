@@ -21,4 +21,7 @@
   .Sidebar {
     height: auto;
   }
+  .Sidebar h1 {
+    display: none;
+  }
 }
