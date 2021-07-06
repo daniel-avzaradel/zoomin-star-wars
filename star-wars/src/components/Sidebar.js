@@ -6,12 +6,12 @@ const Sidebar = ({films}) => {
     return(
         <div className="Sidebar">
             <h1>STAR WARS FILMS</h1>
-            <br />
             <ul>
                 <Link to='/'>
                     <li>Home</li>
                 </Link>
-                <br />
+                    <details>
+                        <summary>Films:</summary>
                 {films.map((item, i) => {
                     return(
                         <Link to={'/films/'+ i} key={i}>
@@ -21,7 +21,7 @@ const Sidebar = ({films}) => {
                         </Link>
                     )
                 })}
-                <br />
+                    </details>
                 <Link to='/favorites'>
                     <li>Favorites</li>
                 </Link>

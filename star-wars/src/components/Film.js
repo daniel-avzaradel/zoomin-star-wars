@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {useParams} from 'react-router-dom';
 import '../styles/Film.css'
 
@@ -8,7 +8,7 @@ function Film(film) {
 
     let episode = ''
 
-    const [movies, setMovies] = useState([])
+    const movies = useRef([])
 
     switch(film.film[id].episode_id) {
         case 1: 
@@ -35,17 +35,22 @@ function Film(film) {
     }
 
     function favorite() {
-        if(movies.includes(film.film[id].title)) {
-            console.log(movies);
+
+        if(movies.current.includes(film.film[id].title)) {
+            console.log('already exists');
         } else {
-            setMovies([...movies, film.film[id].title])
+            movies.current.push(film.film[id].title)
+            console.log(movies.current);
+            localStorage.setItem('favorites', JSON.stringify(movies.current));
+
         }
+        
+        // setMovies([...movies, film.film[id].title])
         // localStorage.setItem('film', film.film[id].title)
     }
 
     useEffect(() => {
-        console.log(movies);
-        console.log(localStorage);
+        localStorage.getItem('favorites');
     }, [movies])
 
     return (
