@@ -10,6 +10,10 @@
     padding: 20px;
 }
 
+.Sidebar ul {
+    margin: 10px 0;
+}
+
 .Sidebar ul li {
     list-style-type: none;
     color: #f2f2f2;
@@ -24,8 +28,8 @@
     padding: 10px 20px;
 }
 
-.Sidebar details:hover { 
-    background-color: #435a6e;
+.Sidebar details summary:hover {
+    color: lightblue;
 }
 
 details > summary {

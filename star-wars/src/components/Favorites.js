@@ -3,8 +3,14 @@ import '../styles/Favorites.css'
 
 function Favorites() {
 
-    let localst = localStorage.getItem('favorites')
-    
+    let localParse;
+    console.log(localParse);
+    if(localParse === undefined || localParse === null) {
+        console.log('local is undefined');
+    } else {
+        localParse = JSON.parse(localStorage.favorites)
+    }
+
 
     return (
         <>

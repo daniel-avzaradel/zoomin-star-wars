@@ -5,16 +5,15 @@ import '../styles/Film.css'
 function Film(film) {
 
     const {id} = useParams();
+    const movies = useRef([])
 
     let episode = ''
 
-    const movies = useRef([])
-
-    switch(film.film[id].episode_id) {
-        case 1: 
+    switch(film.film[id]) {
+        case 1:
             episode = 'I';
             break;
-        case 2: 
+        case 2:
             episode = 'II';
             break;
         case 3: 
@@ -50,7 +49,7 @@ function Film(film) {
     }
 
     useEffect(() => {
-        localStorage.getItem('favorites');
+
     }, [movies])
 
     return (
