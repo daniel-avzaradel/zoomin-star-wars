@@ -1,16 +1,20 @@
 import React from 'react'
 import '../styles/Favorites.css'
+// import React, {useEffect, useRef} from 'react'
+
 
 function Favorites() {
 
-    let localParse;
-    console.log(localParse);
-    if(localParse === undefined || localParse === null) {
-        console.log('local is undefined');
-    } else {
-        localParse = JSON.parse(localStorage.favorites)
-    }
+    // let localParse = useRef();
 
+    // useEffect(() => {
+    //     if(localStorage.favorites.length > 0){
+    //         localParse = JSON.parse(localStorage.favorites)
+    //         console.log(localParse);
+    //     } else if(localParse === undefined || localParse === null) {
+    //         console.log('local is undefined');
+    //     }
+    // }, [])
 
     return (
         <>
@@ -24,6 +28,7 @@ function Favorites() {
                         console.log(item);
                         return <li key={i}>{item}</li>;
                     })
+    
                 } */}
                 </ul>
             </div>

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useRef} from 'react';
 import {useParams} from 'react-router-dom';
 import '../styles/Film.css'
 
@@ -7,9 +7,9 @@ function Film(film) {
     const {id} = useParams();
     const movies = useRef([])
 
-    let episode = ''
+    let episode = '';
 
-    switch(film.film[id]) {
+    switch(film.film[id].episode_id) {
         case 1:
             episode = 'I';
             break;
@@ -29,8 +29,7 @@ function Film(film) {
             episode = 'VI';
             break;
         default:
-            episode = '';
-            break;
+            console.log(episode);
     }
 
     function favorite() {
@@ -48,14 +47,18 @@ function Film(film) {
         // localStorage.setItem('film', film.film[id].title)
     }
 
-    useEffect(() => {
+    function previous() {
+        if(id === 1) {
+            window.location.pathname = 'films/5'
+        } else {
 
-    }, [movies])
+        }
+    }
 
     return (
         <>
         <div className="film">
-            <h2> {film.film[id].title}: Episode {episode} </h2>
+            <h2> {film.film[id].title}: Episode {episode}</h2>
             <br />
             <p>{film.film[id].opening_crawl}</p>
             <br />
@@ -63,6 +66,12 @@ function Film(film) {
             <p>Produced by: {film.film[id].producer}</p>
             <br />
             <button className="favorite" onClick={() => favorite()} >Favorite <i className="far fa-star"></i></button>
+            <br />
+            <br />
+            <div className="prev-next-btns">
+            <button className="prev-next">Previous</button>
+            <button className="prev-next">Next</button>
+            </div>
         </div>
         
         </>
