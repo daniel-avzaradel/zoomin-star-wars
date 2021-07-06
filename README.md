@@ -1,5 +1,5 @@
 ## Zoomin Project - Star Wars Web App
 
-<img src="./img/site.png">
+<img src="./site.png">
 
 <br/>
