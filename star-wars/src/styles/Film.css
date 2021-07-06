@@ -22,24 +22,3 @@
 .favorite:hover {
     background-color: gold;
 }
-
-.prev-next-btns {
-    display: flex;
-    justify-content: center;
-}
-
-.prev-next {
-    padding: 8px 16px;
-    border: none;
-    outline: none;
-    background-color: #444;
-    color: white;
-    cursor: pointer;
-    transition: 0.1s ease;
-    margin: 10px 10px 10px 0;
-}
-
-.prev-next:hover {
-    background-color: #ccc;
-    color: #444;
-}

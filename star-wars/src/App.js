@@ -40,7 +40,7 @@ function App() {
             <Film film={films} />
           </Route>
           <Route path="/favorites">
-            <Favorites />
+            <Favorites films={films} />
           </Route>
         </Switch>
 

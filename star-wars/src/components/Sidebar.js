@@ -10,18 +10,21 @@ const Sidebar = ({films}) => {
                 <Link to='/'>
                     <li>Home</li>
                 </Link>
-                    <details>
-                        <summary>Films:</summary>
+
+                <details>
+                <summary>Films:</summary>
+
                 {films.map((item, i) => {
                     return(
                         <Link to={'/films/'+ i} key={i}>
-                        <li className="film-li">
-                            {item.title}
-                        </li>
+                            <li className="film-li">
+                                {item.title}
+                            </li>
                         </Link>
                     )
                 })}
-                    </details>
+                </details>
+
                 <Link to='/favorites'>
                     <li>Favorites</li>
                 </Link>

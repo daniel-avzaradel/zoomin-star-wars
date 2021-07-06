@@ -7,6 +7,8 @@ function Film(film) {
     const {id} = useParams();
     const movies = useRef([])
 
+    console.log(film.film);
+
     let episode = '';
 
     switch(film.film[id].episode_id) {
@@ -51,7 +53,7 @@ function Film(film) {
         if(id === 1) {
             window.location.pathname = 'films/5'
         } else {
-
+            window.location.pathname = `films/${(id)}`
         }
     }
 
@@ -66,12 +68,6 @@ function Film(film) {
             <p>Produced by: {film.film[id].producer}</p>
             <br />
             <button className="favorite" onClick={() => favorite()} >Favorite <i className="far fa-star"></i></button>
-            <br />
-            <br />
-            <div className="prev-next-btns">
-            <button className="prev-next">Previous</button>
-            <button className="prev-next">Next</button>
-            </div>
         </div>
         
         </>
